@@ -1,0 +1,137 @@
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #eafc38;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    line-height: 1.5;
+  }
+  
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .hero-image {
+    max-height: 30vh;
+    width: auto;
+  }
+  
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+  
+    &.visible {
+      display: flex;
+    }
+  }
+  
+  .visible .modal {
+    animation: show-modal 500ms ease forwards;
+  }
+  
+  .visible .modal-background {
+    animation: fade-background 500ms ease forwards;
+  }
+  
+  .modal {
+    background: #cbe1e5;
+    border-radius: 1rem;
+    max-width: 40rem;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    margin: 1rem;
+  }
+  
+  .modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(234, 252, 56, 0.8);
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  
+  .button-group {
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  button {
+    position: relative;
+    top: 0;
+    background: #051822;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all 250ms ease;
+    width: 100%;
+  
+    &:hover {
+      top: -4px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+    }
+  
+    &.destructive {
+      background: #fc3838;
+    }
+  
+    &.large {
+      font-size: 1.5em;
+    }
+  }
+  
+  @keyframes show-modal {
+    0% {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-background {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
